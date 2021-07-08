@@ -1,0 +1,42 @@
+import React, { Component } from 'react';
+import './Form.css'
+
+class Form extends Component {
+  constructor() {
+    super()
+      this.state = {
+        title: '',
+        description: ''
+      }  
+}
+
+  render() {
+    return (
+      <form>
+        <input
+          type='text'
+          placeholder="Title"
+          name='title'
+          value={this.state.title}
+          onChange={event => this.handleChange(event)}
+        /> 
+
+        <input
+          type='text'
+          placeholder='Description'
+          name='description'
+          value={this.state.description}
+          onChange={event => this.handleChange(event)}
+        />
+
+        <button onClick={event => this.submitIdea(event)}>Submit</button>
+
+      </form>
+
+    )
+  }
+
+
+}
+
+export default Form;
